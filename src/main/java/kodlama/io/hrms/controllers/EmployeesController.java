@@ -26,11 +26,13 @@ public class EmployeesController {
 
     @GetMapping("/getAll")
     public List<Employee> getAll(){
+
         return this.employeeService.getAll();
     }
 
     @PostMapping("/save")
     public void add(@Valid @RequestBody Employee employee){
+
         this.employeeService.add(employee);
     }
 }

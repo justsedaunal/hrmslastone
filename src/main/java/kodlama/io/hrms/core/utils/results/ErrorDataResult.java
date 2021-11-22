@@ -1,4 +1,4 @@
-package kodlama.io.hrms.core.results;
+package kodlama.io.hrms.core.utils.results;
 
 public class ErrorDataResult<T> extends DataResult<T> {
 

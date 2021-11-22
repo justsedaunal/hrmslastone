@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table (name = "candidates")
-@NoArgsConstructor
+
 @AllArgsConstructor
 
 public class Candidate extends Individual{

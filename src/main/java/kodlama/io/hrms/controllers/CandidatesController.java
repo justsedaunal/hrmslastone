@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import kodlama.io.hrms.business.abstracts.CandidateService;
-import kodlama.io.hrms.core.results.DataResult;
-import kodlama.io.hrms.core.results.Result;
+import kodlama.io.hrms.core.utils.results.DataResult;
+import kodlama.io.hrms.core.utils.results.Result;
 import kodlama.io.hrms.entities.concretes.Candidate;
 import kodlama.io.hrms.entities.concretes.User;
 
@@ -24,7 +24,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/v1/candidates")
+@RequestMapping("/api/candidates")
 public class CandidatesController {
 
     @Autowired
@@ -32,17 +32,24 @@ public class CandidatesController {
 
     @GetMapping("/getAll")
     public DataResult<List<Candidate>> getAll(){
+
         return this.candidateService.getAll();
     }
 
     @PostMapping("/save")
     public Result add(@Valid @RequestBody Candidate candidate){
+
         return this.candidateService.add(candidate);
     }
 
     @PutMapping("/update")
     public ResponseEntity<?> update(@RequestBody Candidate candidate){
         return this.candidateService.update(candidate);
+    }
+
+    @PostMapping("/register")
+    public Result register(@RequestBody Candidate candidate) {
+        return this.candidateService.register(candidate);
     }
 
     @PostMapping("/findByEmail")

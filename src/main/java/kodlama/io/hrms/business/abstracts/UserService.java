@@ -4,4 +4,5 @@ import kodlama.io.hrms.entities.concretes.User;
 
 public interface UserService {
     User getById(int id);
+    User getbyUserName (String userName);
 }

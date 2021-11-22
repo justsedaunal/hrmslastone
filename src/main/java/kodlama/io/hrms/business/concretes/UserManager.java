@@ -19,4 +19,9 @@ public class UserManager implements UserService{
 		return null;
 	}
 
+	@Override
+	public User getbyUserName(String userName) {
+		return null;
+	}
+
 }
